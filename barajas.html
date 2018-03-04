@@ -7,31 +7,32 @@
 		https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css
 	 -->
 	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
-  <script src="/lib/jquery-1.12.2.min.js"></script>
-  <script src="/lib/bootstrap.min.js"></script>
-
+  	<script src="/lib/jquery-1.12.2.min.js"></script>
+  	<script src="/lib/bootstrap.min.js"></script>
+  	<script src="js/functions.js"></script>
 
 </head>
-<body background-image="https://data.whicdn.com/images/120350435/original.jpg">
+<body>
 	<header>
 		<h1 id="titulo">BLACKJACK</h1>
 	</header>
 	<main>
 	<article id="maquina">
 	<h3>Máquina</h3>
-	<label id="scope_maquina"><h4>Scope: 0</h4> </label>
+	<label id="score_maquina"><h4>Score: 0</h4> </label>
 	</article>
 	<div id="separador"></div>
 
-	<article id="usuario"><label id="scope_usuario"><h4>Scope: 0</h4> </label></h4>
+	<article id="usuario"><label id="score_usuario"><h4>Score: 0</h4> </label></h4>
 	<h3>Usuario</h3>
 	</article>
 
 	<div id="botones">
 	<center>
-		<button type="button" class="btn btn-info">Nueva Carta</button>
-		<button type="button" class="btn btn-info">Repartir</button>
-		<button type="button" class="btn btn-info">Reiniciar</button>
+		<button id="nueva_carta" onclick="generarCartas()" type="button" class="btn btn-info">Nueva Carta</button>
+		<button id="listo" onclick="usuarioTermina()" type="button" class="btn btn-info">Listo</button>
+		<button id="repartir" onclick="inicio()" type="button" class="btn btn-info">Repartir</button>
+		<button id="reiniciar" onclick="reiniciar()" type="button" class="btn btn-info">Reiniciar</button>
 	</center>
 
 	</div>
