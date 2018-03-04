@@ -1,0 +1,56 @@
+	
+	header{
+		margin: auto;
+		width: 80%;
+		height: 4em;
+		background-color: #00b3b3;
+		color :white;
+	}
+	
+	article#maquina {
+		margin: auto;
+		width: 80%;
+		height: 12em;
+		background-color: #009933;
+
+	}
+	article#usuario{
+		margin: auto;
+		width: 80%;
+		height: 12em;
+		background-color: #009933;
+	}
+	footer{
+		margin: auto;
+		width: 80%;
+		height: 3em;
+		background-color: #00b3b3;
+		color :white;
+		text-align: right;
+	}
+	#titulo{
+		color:white;
+		text-align: center;
+		background-color: #00b3b3;
+		font-family: Comic Sans MS;
+		/*Brush Script MT
+		Comic Sans MS
+		Aharoni
+		*/
+	}
+	#separador{
+		width: 80%;
+		height: 0.2em;
+		background-color: #000;
+		margin: auto;
+
+	}
+	#scope_maquina, #scope_usuario{
+		float: right;
+	}
+	#botones{
+		width: 80%;
+		height: 3em;
+		background-color: #009933;
+		margin: auto;
+	}
