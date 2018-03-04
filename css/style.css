@@ -45,8 +45,9 @@
 		margin: auto;
 
 	}
-	#scope_maquina, #scope_usuario{
+	#score_maquina, #score_usuario{
 		float: right;
+		font-size: 1.5em;
 	}
 	#botones{
 		width: 80%;
