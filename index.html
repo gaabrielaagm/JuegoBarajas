@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>BLACKJACK</title>
+	<link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
+	<!--"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
+		https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css
+	 -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+  	<script src="/lib/jquery-1.12.2.min.js"></script>
+  	<script src="/lib/bootstrap.min.js"></script>
+  	<script src="js/functions.js"></script>
+</head>
+
+<body>
+    <header>
+		<h1 id="titulo">BLACKJACK</h1>
+	</header>
+    <main>
+        <article id="maquina">
+        <h3>Máquina</h3>
+        <label id="score_maquina">Score: 0</label>
+        </article>
+
+        <div id="separador"></div>
+        
+        <article id="usuario">
+        <h3>Usuario</h3>
+        <label id="score_usuario">Score: 0</label>
+        </article>
+        
+        <div id="botones">
+        <center>
+            <button id="nueva_carta" onclick="generarCartas()" type="button" class="btn btn-info">Nueva Carta</button>
+            <button id="listo" onclick="usuarioTermina()" type="button" class="btn btn-info">Listo</button>
+            <button id="repartir" onclick="inicio()" type="button" class="btn btn-info">Repartir</button>
+            <button id="reiniciar" onclick="reiniciar()" type="button" class="btn btn-info">Reiniciar</button>
+        </center>
+        </div>
+    </main>
+    <footer>By Gabriela Guerrero && Citlaly Almanza</footer>
+</body>
+
+</html>
