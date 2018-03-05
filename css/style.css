@@ -1,24 +1,26 @@
-	
 	header{
 		margin: auto;
 		width: 80%;
-		height: 4em;
+		height: 6em;
 		background-color: #00b3b3;
 		color :white;
 	}
 	
-	article#maquina {
+	article#banca	 {
 		margin: auto;
 		width: 80%;
-		height: 12em;
+		height: 13em;
 		background-color: #009933;
-
+		color: black;
+		padding: 2em;
 	}
 	article#usuario{
 		margin: auto;
 		width: 80%;
 		height: 12em;
 		background-color: #009933;
+		color: black;
+		padding: 2em;
 	}
 	footer{
 		margin: auto;
@@ -45,9 +47,10 @@
 		margin: auto;
 
 	}
-	#score_maquina, #score_usuario{
+	#score_banca, #score_usuario{
 		float: right;
 		font-size: 1.5em;
+		color: #000;
 	}
 	#botones{
 		width: 80%;
