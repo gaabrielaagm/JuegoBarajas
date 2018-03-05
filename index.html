@@ -7,38 +7,49 @@
 		https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css
 	 -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
-  	<script src="/lib/jquery-1.12.2.min.js"></script>
-  	<script src="/lib/bootstrap.min.js"></script>
+  	<script src="lib/js/jquery-1.12.2.min.js"></script>
+  	<script src="lib/js/bootstrap.min.js"></script>
   	<script src="js/functions.js"></script>
 </head>
 
 <body>
+    <br><br>
     <header>
-		<h1 id="titulo">BLACKJACK</h1>
+        <br>
+        <h1 id="titulo">BLACKJACK</h1>
+        <br><br>
 	</header>
     <main>
-        <article id="maquina">
-        <h3>Máquina</h3>
-        <label id="score_maquina">Score: 0</label>
+        <article id="banca">
+        <h3>Banca</h3>
+        <div id="cartas_banca">
+        <!--
+            <img src="Baraja/Ap.png">
+        -->
+        </div>
+        <label id="score_banca">Puntos: 0</label>
         </article>
 
         <div id="separador"></div>
         
         <article id="usuario">
         <h3>Usuario</h3>
-        <label id="score_usuario">Score: 0</label>
+        <div id="cartas_usr">
+
+        </div>
+        <label id="score_usuario">Puntos: 0</label>
         </article>
         
         <div id="botones">
         <center>
-            <button id="nueva_carta" onclick="generarCartas()" type="button" class="btn btn-info">Nueva Carta</button>
-            <button id="listo" onclick="usuarioTermina()" type="button" class="btn btn-info">Listo</button>
+            <button id="pedir" onclick="generarCartasUsuario()" type="button" class="btn btn-info">Pedir</button>
+            <button id="plantar" onclick="usuarioTermina()" type="button" class="btn btn-info">Plantar</button>
             <button id="repartir" onclick="inicio()" type="button" class="btn btn-info">Repartir</button>
             <button id="reiniciar" onclick="reiniciar()" type="button" class="btn btn-info">Reiniciar</button>
         </center>
         </div>
     </main>
-    <footer>By Gabriela Guerrero && Citlaly Almanza</footer>
+    <footer>By Citlaly Almanza && Gabriela Guerrero </footer>
 </body>
 
 </html>
