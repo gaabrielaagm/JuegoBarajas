@@ -13,6 +13,8 @@ var cartaOculta_nom;
 var cartaOculta_tipo;
 var cartaOculta_valor;
 
+var funcionEspera;
+
 function inicio(){
     baraja = [
         ["A","p",[1,11]], ["2","p",2], ["3","p",3], ["4","p",4], ["5","p",5], 
@@ -189,15 +191,18 @@ function generarCartasUsuario(){
     //revisarPuntaje();        
 }
 
+function alerta(){
+    alert("Si jala");
+}
+
 function usuarioTermina(){
-    var cartaOculta = document.getElementById("cartaOculta");
-    cartaOculta.src = "Baraja/Ap.png";
-    usr_termino = true;
-    revisarPuntaje();
-    if(score_banca < 17){
+    mostrarCartaOculta();
+    usr_termino = true;    
+    //SI LA BANCA SACA O NO OTRA CARTA
+    if(score_banca < 17){      
         generarCartasBanca();
     }
-    banca_termino = true;
+    banca_termino = true;    
     revisarPuntaje();
 }
 
@@ -216,44 +221,51 @@ function mostrarCartaOculta(){
     cartaOculta.src = "Baraja/Ap.png";
 }
 
+function hasGanado(){
+    document.write("<center><h2>BANCA VS. JUGADOR</h2><br>",
+                    "<h2>",score_banca," vs ",score_usr,"</h2><br>",
+                    "<h1>HAS GANADO</h1><br>",
+                    "<a href='index.html'>Jugar de nuevo</a></center>");
+}
+
+function hasPerdido(){
+    document.write("<center><h2>BANCA VS. JUGADOR</h2><br>",
+                    "<h2>",score_banca," vs ",score_usr,"</h2><br>",
+                    "<h1>HAS PERDIDO</h1><br>",
+                    "<a href='index.html'>Jugar de nuevo</a></center>");
+}
+
+function empate(){
+    document.write("<center><h2>BANCA VS. JUGADOR</h2><br>",
+                    "<h2>",score_banca," vs ",score_usr,"</h2><br>",
+                    "<h1>EMPATE</h1><br>",
+                    "<a href='index.html'>Jugar de nuevo</a></center>");
+}
+
 function revisarPuntaje(){
-    
-    if(score_usr == 21 && score_banca != 21){
-        //confirm("USR VS BANCA "+score_usr+" vs "+score_banca+" HAS GANADO, VUELVE A CARGAR LA PAGINA ");
+    //setTimeout(alerta,5000);
+
+    //QUE EL JUGADOR SE PASO DE LOS 21 Y AUN NO LE DIO EN PLANTAR
+    if(score_usr > 21 && usr_termino == false){
         mostrarCartaOculta();
-        window.open("https://www.argar.cat", "Diseño Web", "width=300, height=200");
-    }else{
-        if(score_usr > 21){
-            mostrarCartaOculta();
-            //confirm("USR VS BANCA "+score_usr+" vs "+score_banca+" HAS PERDIDO, VUELVE A CARGAR LA PAGINA");
-            window.open("https://www.argar.cat", "Diseño Web", "width=300, height=200");
-        }
-    }
-    
-    if(score_banca == 21 && score_usr != 21){
-        mostrarCartaOculta();
-        //confirm("USR VS BANCA "+score_usr+" vs "+score_banca+" HAS PERDIDO, (LA MAQUINA TE GANO) VUELVE A CARGAR LA PAGINA");
-        window.open("https://www.argar.cat", "Diseño Web", "width=300, height=200");
-    }else{
-        if(score_banca > 21 && score_usr != 21){
-            mostrarCartaOculta();
-            //confirm("USR VS BANCA "+score_usr+" vs "+score_banca+" HAS GANADO, (LA MAQUINA PERDIO) VUELVE A CARGAR LA PAGINA");
-            window.open("https://www.argar.cat", "Diseño Web", "width=300, height=200");
-        }else{
-            if(score_banca >= 18 && score_banca < 21){
-                banca_termino = true;
-                if(usr_termino == true){
-                    mostrarCartaOculta();
-                    //confirm("USR VS BANCA "+score_usr+" vs "+score_banca+" HAS PERDIDO, (LA MAQUINA TE GANO) VUELVE A CARGAR LA PAGINA");
-                    window.open("https://www.argar.cat", "Diseño Web", "width=300, height=200");
-                }
-            }
-        }
+        setTimeout(hasPerdido,2000);
+        //alert("PERDISTE");
     }
 
-    //EMPATE
-    if(score_banca == score_usr && usr_termino == true && banca_termino == true){
-        //confirm("USR VS BANCA "+score_usr+" vs "+score_banca+" EMPATE! ");
-        window.open("https://www.argar.cat", "Diseño Web", "width=300, height=200")
+    //QUE EL USUARIO YA HAYA DADO PLANTAR... Y LA BANCA YA HAYA MOSTRADO SU PUNTAJE
+    //COMPARAMOS PARA VER QUIEN GANO Y SI HUBO EMPATE
+    if(usr_termino == true && banca_termino == true){
+        if(score_banca > score_usr){
+            setTimeout(hasPerdido,2500);
+            //alert("PERDISTE");
+        }else{
+            if(score_banca < score_usr){
+                setTimeout(hasGanado,2500);
+                //alert("GANASTE");
+            }else{
+                setTimeout(empate,2500);
+                //alert("EMPATE");
+            }
+        }
     }
 }
