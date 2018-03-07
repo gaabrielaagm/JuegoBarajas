@@ -248,23 +248,34 @@ function revisarPuntaje(){
     //QUE EL JUGADOR SE PASO DE LOS 21 Y AUN NO LE DIO EN PLANTAR
     if(score_usr > 21 && usr_termino == false){
         mostrarCartaOculta();
-        setTimeout(hasPerdido,2000);
-        //alert("PERDISTE");
+        //setTimeout(hasPerdido,2000);
+        alert("PERDISTE");
     }
 
     //QUE EL USUARIO YA HAYA DADO PLANTAR... Y LA BANCA YA HAYA MOSTRADO SU PUNTAJE
     //COMPARAMOS PARA VER QUIEN GANO Y SI HUBO EMPATE
     if(usr_termino == true && banca_termino == true){
-        if(score_banca > score_usr){
-            setTimeout(hasPerdido,2500);
+        if(score_banca > score_usr && score_banca <= 21){
+            if(score_banca <= 21){
+                //setTimeout(hasPerdido,2500);  
+                alert("PERDISTE");  
+            }else{
+                //setTimeout(hasGanado,2500);
+                alert("GANASTE");
+            }
             //alert("PERDISTE");
         }else{
             if(score_banca < score_usr){
-                setTimeout(hasGanado,2500);
+                if(score_usr <= 21){
+                    //setTimeout(hasGanado,2500);
+                    alert("GANASTE");
+                }                
                 //alert("GANASTE");
             }else{
-                setTimeout(empate,2500);
-                //alert("EMPATE");
+                if(score_banca == score_usr){
+                    //setTimeout(hasGanado,2500);
+                    alert("GANASTE");
+                }
             }
         }
     }
